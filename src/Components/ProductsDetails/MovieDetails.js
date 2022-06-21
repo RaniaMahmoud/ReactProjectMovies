@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axiosInst from "../../axios/Axios";
-import ApIKey from "../../config/config";
+import {ApIKey} from "../../config/config";
 import '../ProductsDetails/MovieDetails.css';
 
 const MovieDetails=(props) =>{
@@ -22,7 +22,7 @@ const MovieDetails=(props) =>{
                 console.log("sdf");
                 console.log(error);
             });
-    }, []);
+    }, [params.id]);
     return (
         <>
             <div className="card border-info card mb-3 mt-5 ms-5 cardWidth">
@@ -68,7 +68,8 @@ const MovieDetails=(props) =>{
             </div>
 
             <div className="text-end me-5 mt-5 pb-5">
-                <Link to={"/"} className="btn btn-dark btn-lg me-5">All Movies</Link>
+                <a href={`/`} className="btn btn-dark btn-lg me-5">All Movies</a>
+                {/* <Link to={"/"} className="btn btn-dark btn-lg me-5">All Movies</Link> */}
             </div>
         </>
 
